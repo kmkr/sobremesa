@@ -2,10 +2,12 @@
   "name": "sobremesa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "webpack -p",
-    "start": "NODE_ENV=development webpack -w"
+    "start:client": "NODE_ENV=development webpack -w",
+    "start:server": "npm run start",
+    "start": "node lib/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,11 @@
     "preact": "^8.4.2",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "compression": "^1.7.3",
+    "express": "^4.16.4",
+    "md5-file": "^4.0.0",
+    "pug": "^2.0.3"
   }
 }
