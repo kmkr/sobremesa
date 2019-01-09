@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -p",
+    "start": "NODE_ENV=development webpack -w"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/kmkr/sobremesa/issues"
   },
-  "homepage": "https://github.com/kmkr/sobremesa#readme"
+  "homepage": "https://github.com/kmkr/sobremesa#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-react-jsx": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
+    "preact": "^8.4.2",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1"
+  }
 }
