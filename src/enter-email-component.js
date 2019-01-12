@@ -72,6 +72,7 @@ class EnterEmailComponent extends Component {
         <form onSubmit={this.saveEmail}>
           <input
             disabled={loading}
+            required
             type="email"
             value={email}
             onInput={this.updateEmail}
