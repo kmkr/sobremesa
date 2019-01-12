@@ -1,14 +1,10 @@
-import { h, render, Component } from "preact";
+import { h, render } from "preact";
 
-const { sobrWelcomeMsg: welcomeMsg } = window;
+import App from "./app";
+
+const { sobrWelcomeMsg, sobrUserName } = window;
 
 render(
-  <div>
-    <p>Helllo!</p>
-
-    {!!welcomeMsg && <p>{welcomeMsg}</p>}
-
-    <button onClick={e => alert("hi!")}>Click Me</button>
-  </div>,
+  <App welcomeMsg={sobrWelcomeMsg} userName={sobrUserName} />,
   document.body
 );
