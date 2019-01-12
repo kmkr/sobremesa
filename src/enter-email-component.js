@@ -23,6 +23,12 @@ class EnterEmailComponent extends Component {
     }
   };
 
+  handleKeyDown = e => {
+    if (e.keyCode === 13) {
+      this.saveEmail();
+    }
+  };
+
   saveEmail = () => {
     const { userName } = this.props;
     const { email } = this.state;
@@ -72,6 +78,7 @@ class EnterEmailComponent extends Component {
           disabled={loading}
           type="email"
           value={email}
+          onKeyDown={this.handleKeyDown}
           onInput={this.updateEmail}
         />
         <button onClick={this.saveEmail} disabled={loading}>

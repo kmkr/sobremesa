@@ -8,6 +8,12 @@ class EnterCodeComponent extends Component {
     };
   }
 
+  handleKeyDown = e => {
+    if (e.keyCode === 13) {
+      this.openCode();
+    }
+  };
+
   updateCode = e => {
     const code = e.currentTarget.value;
     this.setState({
@@ -34,6 +40,7 @@ class EnterCodeComponent extends Component {
         <input
           value={code}
           onInput={this.updateCode}
+          onKeyDown={this.handleKeyDown}
           placeholder="akrobatisk-sommerfugl"
         />
         <button onClick={this.openCode}>Zing</button>
