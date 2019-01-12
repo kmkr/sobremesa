@@ -2,9 +2,13 @@ import { h, render } from "preact";
 
 import App from "./app";
 
-const { sobrWelcomeMsg, sobrUserName } = window;
+const { sobrWelcomeMsg, sobrUserName, sobrMissingUser } = window;
 
 render(
-  <App welcomeMsg={sobrWelcomeMsg} userName={sobrUserName} />,
+  <App
+    welcomeMsg={sobrWelcomeMsg}
+    userName={sobrUserName}
+    missingUser={sobrMissingUser}
+  />,
   document.body
 );

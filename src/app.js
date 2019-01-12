@@ -4,12 +4,12 @@ import EnterEmailComponent from "./enter-email-component";
 import EnterCodeComponent from "./enter-code-component";
 
 class App extends Component {
-  render({ userName, welcomeMsg }) {
-    if (welcomeMsg) {
+  render({ userName, welcomeMsg, missingUser }) {
+    if (userName) {
       return <EnterEmailComponent userName={userName} msg={welcomeMsg} />;
     }
 
-    return <EnterCodeComponent />;
+    return <EnterCodeComponent missingUser={missingUser} />;
   }
 }
 

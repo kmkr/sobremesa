@@ -23,13 +23,8 @@ class EnterEmailComponent extends Component {
     }
   };
 
-  handleKeyDown = e => {
-    if (e.keyCode === 13) {
-      this.saveEmail();
-    }
-  };
-
-  saveEmail = () => {
+  saveEmail = e => {
+    e.preventDefault();
     const { userName } = this.props;
     const { email } = this.state;
     this.setState({
@@ -74,18 +69,19 @@ class EnterEmailComponent extends Component {
         <p>{msg}</p>
 
         {error && <p>Uffda, det fungerte ikke. Prøv på nytt?</p>}
-        <input
-          disabled={loading}
-          type="email"
-          value={email}
-          onKeyDown={this.handleKeyDown}
-          onInput={this.updateEmail}
-        />
-        <button onClick={this.saveEmail} disabled={loading}>
-          Zing
-        </button>
-        {invalid && <p>Vi trenger en gyldig e-postadresse</p>}
-        {success && <p>Yay! Takk.</p>}
+        <form onSubmit={this.saveEmail}>
+          <input
+            disabled={loading}
+            type="email"
+            value={email}
+            onInput={this.updateEmail}
+          />
+          <button type="submit" disabled={loading}>
+            Zing
+          </button>
+          {invalid && <p class="error">Vi trenger en gyldig e-postadresse</p>}
+          {success && <p class="success">Yay! Takk.</p>}
+        </form>
       </div>
     );
   }

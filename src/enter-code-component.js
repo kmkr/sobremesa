@@ -8,12 +8,6 @@ class EnterCodeComponent extends Component {
     };
   }
 
-  handleKeyDown = e => {
-    if (e.keyCode === 13) {
-      this.openCode();
-    }
-  };
-
   updateCode = e => {
     const code = e.currentTarget.value;
     this.setState({
@@ -21,10 +15,11 @@ class EnterCodeComponent extends Component {
     });
   };
 
-  openCode = () => {
+  openCode = e => {
+    e.preventDefault();
     const code = this.state.code.replace(/\s/, "-");
     window.location.href = [
-      window.location.href,
+      window.location.origin,
       "?",
       "spirit",
       "=",
@@ -32,18 +27,34 @@ class EnterCodeComponent extends Component {
     ].join("");
   };
 
-  render({}, { code }) {
+  render({ missingUser }, { code }) {
     return (
       <div>
-        <p>Hei! Skriv inn koden du har fått av oss.</p>
+        <p>Hei! Skriv inn koden du har fått av oss (ett ord pluss ett dyr).</p>
 
-        <input
-          value={code}
-          onInput={this.updateCode}
-          onKeyDown={this.handleKeyDown}
-          placeholder="akrobatisk-sommerfugl"
-        />
-        <button onClick={this.openCode}>Zing</button>
+        <form onSubmit={this.openCode}>
+          <input
+            value={code}
+            onInput={this.updateCode}
+            placeholder="akrobatisk-sommerfugl"
+          />
+          <button type="submit">Zing</button>
+          {!!missingUser && (
+            <p class="error">
+              {missingUser.split(" ").length > 1 ? (
+                <span>
+                  Uhm, fant ikke noe med kombinasjonen '{missingUser}', sikker
+                  på at du skrev riktig?
+                </span>
+              ) : (
+                <span>
+                  Koden er en kombinasjon av et ord og et dyr. Du skrev '
+                  {missingUser}'.
+                </span>
+              )}
+            </p>
+          )}
+        </form>
       </div>
     );
   }
