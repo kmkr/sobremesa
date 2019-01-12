@@ -2,8 +2,9 @@ extends layout.pug
 
 block content
     div(id='app')
-      script(type='text/javascript').
-        window.sobrMissingUser = '#{missingUser}';
+      if missingUser
+        script(type='text/javascript').
+            window.sobrMissingUser = '#{missingUser}';
       if user
         script(type='text/javascript').
           window.sobrWelcomeMsg = '#{user.welcomeMsg}';

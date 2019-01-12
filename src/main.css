@@ -1,0 +1,33 @@
+.error {
+  color: red;
+}
+
+.mr2 {
+  margin-right: 10px;
+}
+
+input[type="text"],
+input[type="email"] {
+  line-height: 24px;
+  padding: 8px 16px;
+  border-radius: 2px;
+  border: 1px solid #262627;
+  transition: 0.2s ease;
+  transition-property: background-color, border-color, color;
+}
+
+button {
+  line-height: 24px;
+  padding: 8px 16px;
+  border-radius: 2px;
+  border: 1px solid #262627;
+  transition: 0.2s ease;
+  transition-property: background-color, border-color, color;
+  background-color: #262627;
+  color: #fff;
+}
+
+button:hover {
+  background-color: rgba(38, 38, 39, 0.9);
+  border-color: rgba(38, 38, 39, 0.9);
+}

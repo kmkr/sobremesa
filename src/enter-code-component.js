@@ -34,6 +34,8 @@ class EnterCodeComponent extends Component {
 
         <form onSubmit={this.openCode}>
           <input
+            class="mr2"
+            type="text"
             required
             pattern="^\w+[\s-]\w+$"
             value={code}

@@ -71,6 +71,8 @@ class EnterEmailComponent extends Component {
         {error && <p>Uffda, det fungerte ikke. Prøv på nytt?</p>}
         <form onSubmit={this.saveEmail}>
           <input
+            class="mr2"
+            type="text"
             disabled={loading}
             required
             type="email"
