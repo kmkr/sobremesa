@@ -8,7 +8,7 @@ function validateEmail(email) {
   return re.test(email);
 }
 
-class WelcomeComponent extends Component {
+class EnterEmailComponent extends Component {
   constructor() {
     super();
     this.saveEmail = this.saveEmail.bind(this);
@@ -91,4 +91,4 @@ class WelcomeComponent extends Component {
   }
 }
 
-export default WelcomeComponent;
+export default EnterEmailComponent;
