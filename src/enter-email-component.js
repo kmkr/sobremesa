@@ -1,5 +1,4 @@
 import { h, Component } from "preact";
-import linkState from "linkstate";
 
 import { post } from "./fetch-wrapper";
 
@@ -9,11 +8,6 @@ function validateEmail(email) {
 }
 
 class EnterEmailComponent extends Component {
-  constructor() {
-    super();
-    this.saveEmail = this.saveEmail.bind(this);
-  }
-
   updateEmail = e => {
     const { hasSubmitted } = this.state;
     const email = e.currentTarget.value;
@@ -29,7 +23,7 @@ class EnterEmailComponent extends Component {
     }
   };
 
-  saveEmail() {
+  saveEmail = () => {
     const { userName } = this.props;
     const { email } = this.state;
     this.setState({
@@ -64,7 +58,7 @@ class EnterEmailComponent extends Component {
           error: true
         });
       });
-  }
+  };
 
   render({ msg }, { error, email, invalid, loading, success }) {
     return (
@@ -75,7 +69,6 @@ class EnterEmailComponent extends Component {
 
         {error && <p>Uffda, det fungerte ikke. Prøv på nytt?</p>}
         <input
-          key="email"
           disabled={loading}
           type="email"
           value={email}

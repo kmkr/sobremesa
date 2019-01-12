@@ -1,6 +1,7 @@
 import { h, render, Component } from "preact";
 
 import EnterEmailComponent from "./enter-email-component";
+import EnterCodeComponent from "./enter-code-component";
 
 class App extends Component {
   render({ userName, welcomeMsg }) {
@@ -8,7 +9,7 @@ class App extends Component {
       return <EnterEmailComponent userName={userName} msg={welcomeMsg} />;
     }
 
-    return <div>Enter code</div>;
+    return <EnterCodeComponent />;
   }
 }
 
