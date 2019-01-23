@@ -44,7 +44,7 @@ class EnterCodeComponent extends Component {
           <button type="submit">Zing</button>
           {!!missingUser && (
             <p class="error">
-              {missingUser.split(" ").length > 1 ? (
+              {missingUser.split(/[\s-]/).length > 1 ? (
                 <span>
                   Uhm, fant ikke noe med kombinasjonen '{missingUser}', sikker
                   på at du skrev riktig?
