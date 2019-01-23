@@ -31,3 +31,18 @@ button:hover {
   background-color: rgba(38, 38, 39, 0.9);
   border-color: rgba(38, 38, 39, 0.9);
 }
+
+body {
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#app {
+  width: 400px;
+  margin: 0 auto;
+}

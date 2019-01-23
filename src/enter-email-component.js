@@ -64,15 +64,18 @@ class EnterEmailComponent extends Component {
   render({ msg }, { error, email, invalid, loading, success }) {
     return (
       <div>
-        <p>Helllo!</p>
+        <h1>April 2020</h1>
 
         <p>{msg}</p>
+
+        <p>Fyll inn e-postadresse så får du noe info snart</p>
 
         {error && <p>Uffda, det fungerte ikke. Prøv på nytt?</p>}
         <form onSubmit={this.saveEmail}>
           <input
             class="mr2"
             type="text"
+            placeholder="ole@bru.mm"
             disabled={loading}
             required
             type="email"

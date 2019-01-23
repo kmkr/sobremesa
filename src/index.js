@@ -10,5 +10,5 @@ render(
     userName={sobrUserName}
     missingUser={sobrMissingUser}
   />,
-  document.body
+  document.getElementById("app")
 );

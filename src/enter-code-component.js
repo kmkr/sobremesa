@@ -30,7 +30,8 @@ class EnterCodeComponent extends Component {
   render({ missingUser }, { code }) {
     return (
       <div>
-        <p>Hei! Skriv inn koden du har fått av oss (ett ord pluss ett dyr).</p>
+        <h1>Hei!</h1>
+        <p>Skriv inn koden du har fått av oss (ett ord pluss ett dyr).</p>
 
         <form onSubmit={this.openCode}>
           <input
