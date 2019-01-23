@@ -37,7 +37,6 @@ class EnterCodeComponent extends Component {
             class="mr2"
             type="text"
             required
-            pattern="^\w+[\s-]\w+$"
             value={code}
             onInput={this.updateCode}
             placeholder="akrobatisk-sommerfugl"
