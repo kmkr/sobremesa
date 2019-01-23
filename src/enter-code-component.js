@@ -51,7 +51,7 @@ class EnterCodeComponent extends Component {
                 </span>
               ) : (
                 <span>
-                  Koden er en kombinasjon av et ord og et dyr. Du skrev '
+                  Koden er en kombinasjon av ett ord og ett dyr. Du skrev '
                   {missingUser}'.
                 </span>
               )}
