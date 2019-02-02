@@ -61,13 +61,14 @@ class EnterEmailComponent extends Component {
       });
   };
 
-  render(_, { error, email, invalid, loading, success }) {
+  render(_, { error, email, hasSubmitted, invalid, loading, success }) {
     return (
       <div>
-        <p>Fyll inn e-postadresse så får du noe info snart</p>
-
         {error && <p>Uffda, det fungerte ikke. Prøv på nytt?</p>}
-        <form onSubmit={this.saveEmail}>
+        <form
+          onSubmit={this.saveEmail}
+          class={!hasSubmitted ? "unsubmitted" : ""}
+        >
           <input
             class="mr2"
             type="text"

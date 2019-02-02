@@ -5,12 +5,12 @@ import EnterCodeComponent from "./enter-code-component";
 import WelcomeComponent from "./welcome";
 
 class App extends Component {
-  render({ userName, welcomeMsg, missingUser }) {
-    if (userName) {
+  render({ user, missingUser }) {
+    if (user) {
       return (
         <div>
-          <WelcomeComponent msg={welcomeMsg} />
-          <EnterEmailComponent userName={userName} />
+          <WelcomeComponent user={user} />
+          <EnterEmailComponent userName={user.name} />
         </div>
       );
     }

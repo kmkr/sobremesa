@@ -7,6 +7,14 @@ block content
             window.sobrMissingUser = '#{missingUser}';
       if user
         script(type='text/javascript').
-          window.sobrWelcomeMsg = '#{user.welcomeMsg}';
-          window.sobrUserName = '#{user.name}';
+          window.sobr = {
+            user: {
+              name: '#{user.name}',
+              inviter: '#{user.inviter}',
+              welcomeMsg: '#{user.welcomeMsg}'
+            }
+          };
+      else
+        script(type='text/javascript').
+          window.sobr = {}
     script(type='text/javascript' src=js async charset='utf-8')
