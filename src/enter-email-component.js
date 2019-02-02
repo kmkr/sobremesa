@@ -65,12 +65,8 @@ class EnterEmailComponent extends Component {
     return (
       <div>
         {error && <p>Uffda, det fungerte ikke. Prøv på nytt?</p>}
-        <form
-          onSubmit={this.saveEmail}
-          class={!hasSubmitted ? "unsubmitted" : ""}
-        >
+        <form onSubmit={this.saveEmail}>
           <input
-            class="mr2"
             type="text"
             placeholder="ole@bru.mm"
             disabled={loading}
@@ -79,7 +75,7 @@ class EnterEmailComponent extends Component {
             value={email}
             onInput={this.updateEmail}
           />
-          <button type="submit" disabled={loading}>
+          <button class="bl0" type="submit" disabled={loading}>
             Zing
           </button>
           {invalid && <p class="error">Vi trenger en gyldig e-postadresse</p>}

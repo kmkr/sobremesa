@@ -6,29 +6,32 @@
   margin-right: 10px;
 }
 
+.bl0 {
+  border-left: 0;
+}
+
 input[type="text"],
 input[type="email"] {
   line-height: 24px;
-  padding: 8px 16px;
-  border-radius: 2px;
+  padding: 10px 16px;
   border: 1px solid #262627;
   transition: 0.2s ease;
   transition-property: background-color, border-color, color;
   text-transform: lowercase;
 }
 
-.unsubmitted input:required {
-  outline: 1px solid black;
+input:required {
+  box-shadow: none;
 }
 
 button {
   line-height: 24px;
-  padding: 8px 16px;
-  border-radius: 2px;
-  border: 1px solid #262627;
+  cursor: pointer;
+  padding: 10px 16px;
+  border: 1px solid #000;
   transition: 0.2s ease;
   transition-property: background-color, border-color, color;
-  background-color: #262627;
+  background-color: #ee7470;
   color: #fff;
 }
 
@@ -50,4 +53,11 @@ body {
 #app {
   width: 400px;
   margin: 0 auto;
+}
+
+form {
+  display: flex;
+}
+form input {
+  flex-grow: 1;
 }

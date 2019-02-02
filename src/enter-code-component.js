@@ -35,14 +35,15 @@ class EnterCodeComponent extends Component {
 
         <form onSubmit={this.openCode}>
           <input
-            class="mr2"
             type="text"
             required
             value={code}
             onInput={this.updateCode}
             placeholder="akrobatisk-sommerfugl"
           />
-          <button type="submit">Zing</button>
+          <button class="bl0" type="submit">
+            Zing
+          </button>
           {!!missingUser && (
             <p class="error">
               {missingUser.split(/[\s-]/).length > 1 ? (
