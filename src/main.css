@@ -14,6 +14,7 @@ input[type="email"] {
   border: 1px solid #262627;
   transition: 0.2s ease;
   transition-property: background-color, border-color, color;
+  text-transform: lowercase;
 }
 
 button {
