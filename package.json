@@ -9,7 +9,7 @@
     "build:css": "postcss --use autoprefixer -o dist/main.css src/main.css",
     "postinstall": "npm run build",
     "start:client": "NODE_ENV=development webpack -w",
-    "start:server": "npm run start",
+    "start:server": "nodemon -e css lib/index.js",
     "start": "node lib/index.js"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "@babel/preset-env": "^7.2.3",
     "autoprefixer": "^9.4.5",
     "babel-loader": "^8.0.5",
+    "nodemon": "^1.18.9",
     "postcss": "^7.0.11",
     "postcss-cli": "^6.1.1",
     "preact": "^8.4.2",
