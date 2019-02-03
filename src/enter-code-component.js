@@ -29,37 +29,39 @@ class EnterCodeComponent extends Component {
 
   render({ missingUser }, { code }) {
     return (
-      <div>
-        <h1>Hei!</h1>
-        <p>Skriv inn koden du har fått av oss (ett ord pluss ett dyr).</p>
+      <div id="enter-code-component" class="block">
+        <div>
+          <h1>Hei!</h1>
+          <p>Skriv inn koden du har fått av oss (ett ord pluss ett dyr).</p>
 
-        <form onSubmit={this.openCode}>
-          <input
-            type="text"
-            required
-            value={code}
-            onInput={this.updateCode}
-            placeholder="akrobatisk-sommerfugl"
-          />
-          <button class="bl0" type="submit">
-            Zing
-          </button>
-          {!!missingUser && (
-            <p class="error">
-              {missingUser.split(/[\s-]/).length > 1 ? (
-                <span>
-                  Uhm, fant ikke noe med kombinasjonen '{missingUser}', sikker
-                  på at du skrev riktig?
-                </span>
-              ) : (
-                <span>
-                  Koden er en kombinasjon av ett ord og ett dyr. Du skrev '
-                  {missingUser}'.
-                </span>
-              )}
-            </p>
-          )}
-        </form>
+          <form onSubmit={this.openCode}>
+            <input
+              type="text"
+              required
+              value={code}
+              onInput={this.updateCode}
+              placeholder="akrobatisk-sommerfugl"
+            />
+            <button class="bl0" type="submit">
+              Zing
+            </button>
+            {!!missingUser && (
+              <p class="error">
+                {missingUser.split(/[\s-]/).length > 1 ? (
+                  <span>
+                    Uhm, fant ikke noe med kombinasjonen '{missingUser}', sikker
+                    på at du skrev riktig?
+                  </span>
+                ) : (
+                  <span>
+                    Koden er en kombinasjon av ett ord og ett dyr. Du skrev '
+                    {missingUser}'.
+                  </span>
+                )}
+              </p>
+            )}
+          </form>
+        </div>
       </div>
     );
   }
