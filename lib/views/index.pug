@@ -2,19 +2,18 @@ extends layout.pug
 
 block content
     div(id='app')
+      script(type='text/javascript').
+        window.sobr = {
+          assets: !{assets}
+        }
       if missingUser
         script(type='text/javascript').
-            window.sobrMissingUser = '#{missingUser}';
+            window.sobr.missingUser = '#{missingUser}';
       if user
         script(type='text/javascript').
-          window.sobr = {
-            user: {
-              name: '#{user.name}',
-              inviter: '#{user.inviter}',
-              welcomeMsg: '#{user.welcomeMsg}'
-            }
+          window.sobr.user = {
+            name: '#{user.name}',
+            inviter: '#{user.inviter}',
+            welcomeMsg: '#{user.welcomeMsg}'
           };
-      else
-        script(type='text/javascript').
-          window.sobr = {}
     script(type='text/javascript' src=js async charset='utf-8')

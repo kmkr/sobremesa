@@ -13,8 +13,16 @@
   margin-right: 10px;
 }
 
+.mb2 {
+  margin-bottom: 10px;
+}
+
 .bl0 {
   border-left: 0;
+}
+
+.tc {
+  text-align: center;
 }
 
 input[type="text"],
@@ -46,19 +54,16 @@ button:hover {
   background-color: var(--color-dark-red);
 }
 
-body {
-  align-items: center;
-  display: flex;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+#app {
+  margin: 0 auto;
 }
 
-#app {
-  width: 400px;
-  margin: 0 auto;
+.block {
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 form {
@@ -66,4 +71,17 @@ form {
 }
 form input {
   flex-grow: 1;
+}
+
+#welcome-component .image-wrapper {
+  background-color: var(--color-peach);
+}
+
+#welcome-component .image-wrapper img {
+  margin-top: 30px;
+  margin-bottom: -4px;
+}
+
+body {
+  margin: 0 0 10px 0;
 }

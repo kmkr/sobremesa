@@ -9,7 +9,7 @@
     "build:css": "postcss -o dist/main.css src/main.css",
     "postinstall": "npm run build",
     "start:client": "NODE_ENV=development webpack -w",
-    "start:server": "nodemon -e css lib/index.js",
+    "start:server": "nodemon -e css,js --watch dist/main.css --watch lib lib/index.js",
     "start": "node lib/index.js"
   },
   "repository": {
