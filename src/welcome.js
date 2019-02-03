@@ -3,10 +3,10 @@ import EnterEmailComponent from "./enter-email-component";
 
 class WelcomeComponent extends Component {
   render({ user }) {
-    const funMsg =
+    const inviterSpecificMsg =
       user.inviter === "km"
-        ? "E-post lagres krypta"
-        : "Vi lover å ikke selge e-post til tredjeparter";
+        ? "E-post lagres krypta og regnes ikke som påmelding."
+        : "Vi lover å ikke selge e-post til tredjeparter, og den regnes ikke som påmelding.";
     return (
       <div>
         <h1>April 2020</h1>
@@ -18,7 +18,7 @@ class WelcomeComponent extends Component {
         <p>
           Du får snart mer informasjon angående nøyaktig dato og hvor det hele
           skal skje. For å gi deg denne informasjonen trenger vi din e-post.{" "}
-          {funMsg} og regnes ikke som påmelding.
+          {inviterSpecificMsg}
         </p>
       </div>
     );
