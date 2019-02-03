@@ -30,6 +30,7 @@ input[type="email"] {
   line-height: 24px;
   padding: 10px 16px;
   border: 1px solid #262627;
+  border-radius: 0;
   transition: 0.2s ease;
   transition-property: background-color, border-color, color;
   text-transform: lowercase;
@@ -40,6 +41,7 @@ input:required {
 }
 
 button {
+  border-radius: 0;
   line-height: 24px;
   cursor: pointer;
   padding: 10px 16px;
