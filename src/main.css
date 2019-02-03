@@ -2,10 +2,11 @@
   --color-peach: #f4aa94;
   --color-blue: #def1f1;
   --color-red: #ee7470;
+  --color-dark-red: #e74e49;
   --color-dark: #000;
 }
 .error {
-  color: var(--color-red);
+  color: var(--color-dark-red);
 }
 
 .mr2 {
@@ -42,8 +43,7 @@ button {
 }
 
 button:hover {
-  background-color: rgba(38, 38, 39, 0.9);
-  border-color: rgba(38, 38, 39, 0.9);
+  background-color: var(--color-dark-red);
 }
 
 body {
