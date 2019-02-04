@@ -3,10 +3,6 @@ import EnterEmailComponent from "./enter-email-component";
 
 class WelcomeComponent extends Component {
   render({ assets, children, user }) {
-    const inviterSpecificMsg =
-      user.inviter === "km"
-        ? "E-post lagres krypta og regnes ikke som påmelding."
-        : "Vi lover å ikke selge e-post til tredjeparter, og den regnes ikke som påmelding.";
     return (
       <div id="welcome-component" class="tc">
         <div class="image-wrapper b f3">
@@ -29,7 +25,7 @@ class WelcomeComponent extends Component {
             <p>
               Du får snart mer informasjon angående nøyaktig dato og hvor det
               hele skal skje. For å gi deg denne informasjonen trenger vi din
-              e-post. {inviterSpecificMsg}
+              e-post. E-post lagres krypta og regnes ikke som påmelding.
             </p>
 
             <div class="pt3">{children}</div>
