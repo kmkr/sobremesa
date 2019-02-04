@@ -5,7 +5,7 @@ class WelcomeComponent extends Component {
   render({ assets, children, user }) {
     return (
       <div id="welcome-component" class="tc">
-        <div class="image-wrapper b f3">
+        <div class="image-wrapper fw400 f3">
           <p>Mye kos. Litt bryllup.</p>
           <p>ca dd.mm.åååå</p>
           <img src={assets.iceCream} alt="Wedding on top" />

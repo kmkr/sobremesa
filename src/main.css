@@ -134,7 +134,10 @@ h2 {
   margin-bottom: 0.6rem;
 }
 
-.b,
+.fw400 {
+  font-weight: 400;
+}
+
 h2 {
   font-weight: 500;
 }
