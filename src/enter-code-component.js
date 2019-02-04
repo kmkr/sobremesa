@@ -38,7 +38,6 @@ class EnterCodeComponent extends Component {
           <form onSubmit={this.openCode}>
             <input
               type="text"
-              required
               value={code}
               onInput={this.updateCode}
               placeholder="akrobatisk-sommerfugl"

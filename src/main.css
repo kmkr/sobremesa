@@ -8,8 +8,18 @@
   --color-dark: #000;
   --color-white: #fff;
 }
+
 .error {
-  color: var(--color-dark-red);
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.pa3 {
+  padding: 20px;
+}
+
+.mt3 {
+  margin-top: 20px;
 }
 
 .mr2 {
@@ -37,8 +47,7 @@
   text-align: center;
 }
 
-input[type="text"],
-input[type="email"] {
+input[type="text"] {
   line-height: 24px;
   padding: 10px 16px;
   border: 1px solid #262627;
@@ -50,6 +59,10 @@ input[type="email"] {
 
 input:required {
   box-shadow: none;
+}
+
+input:focus {
+  outline: 0;
 }
 
 button {

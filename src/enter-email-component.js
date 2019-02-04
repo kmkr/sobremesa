@@ -70,8 +70,6 @@ class EnterEmailComponent extends Component {
             type="text"
             placeholder="ole@bru.mm"
             disabled={loading}
-            required
-            type="email"
             value={email}
             onInput={this.updateEmail}
           />
@@ -79,8 +77,12 @@ class EnterEmailComponent extends Component {
             Zing
           </button>
         </form>
-        {invalid && <p class="error">Vi trenger en gyldig e-postadresse</p>}
-        {success && <p class="success">Yay! Takk.</p>}
+        {invalid && (
+          <p class="error mt3 pa3">
+            Vi trenger en gyldig e-postadresse. Nice try!
+          </p>
+        )}
+        {success && <p class="success mt3">Yay! Takk.</p>}
       </div>
     );
   }
