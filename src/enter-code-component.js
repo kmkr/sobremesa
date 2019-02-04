@@ -32,7 +32,8 @@ class EnterCodeComponent extends Component {
       <div id="enter-code-component" class="block">
         <div>
           <h1>Hei!</h1>
-          <p>Skriv inn koden du har fått av oss (ett ord pluss ett dyr).</p>
+
+          <p>Skriv inn koden din (tildelt ord pluss ditt spirit animal).</p>
 
           <form onSubmit={this.openCode}>
             <input
