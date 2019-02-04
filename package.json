@@ -7,6 +7,7 @@
     "build": "npm run build:js && npm run build:css",
     "build:js": "webpack -p",
     "build:css": "postcss -o dist/main.css src/main.css",
+    "watch:css": "nodemon -e css --watch src/main.css --exec npm run build:css",
     "postinstall": "npm run build",
     "start:client": "NODE_ENV=development webpack -w",
     "start:server": "nodemon -e css,js --watch dist/main.css --watch lib lib/index.js",
