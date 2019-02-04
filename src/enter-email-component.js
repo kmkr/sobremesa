@@ -78,9 +78,9 @@ class EnterEmailComponent extends Component {
           <button class="bl0" type="submit" disabled={loading}>
             Zing
           </button>
-          {invalid && <p class="error">Vi trenger en gyldig e-postadresse</p>}
-          {success && <p class="success">Yay! Takk.</p>}
         </form>
+        {invalid && <p class="error">Vi trenger en gyldig e-postadresse</p>}
+        {success && <p class="success">Yay! Takk.</p>}
       </div>
     );
   }

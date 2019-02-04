@@ -9,10 +9,9 @@ class App extends Component {
     if (user) {
       return (
         <div>
-          <WelcomeComponent assets={assets} user={user} />
-          <div class="block">
+          <WelcomeComponent assets={assets} user={user}>
             <EnterEmailComponent userName={user.name} />
-          </div>
+          </WelcomeComponent>
         </div>
       );
     }

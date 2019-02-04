@@ -1,9 +1,12 @@
+@import "normalize.css";
+
 :root {
   --color-peach: #f4aa94;
   --color-blue: #def1f1;
   --color-red: #ee7470;
   --color-dark-red: #e74e49;
   --color-dark: #000;
+  --color-white: #fff;
 }
 .error {
   color: var(--color-dark-red);
@@ -15,6 +18,15 @@
 
 .mb2 {
   margin-bottom: 10px;
+}
+
+.pt3 {
+  padding-top: 30px;
+}
+
+.pv4 {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .bl0 {
@@ -49,7 +61,7 @@ button {
   transition: 0.2s ease;
   transition-property: background-color, border-color, color;
   background-color: var(--color-red);
-  color: #fff;
+  color: var(--color-white);
 }
 
 button:hover {
@@ -64,29 +76,65 @@ button:hover {
   max-width: 400px;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.bg-blue {
+  background-color: var(--color-blue);
 }
 
 form {
   display: flex;
 }
+
 form input {
   flex-grow: 1;
 }
 
+p {
+  margin: 0;
+  padding-bottom: 8px;
+}
+
 #welcome-component .image-wrapper {
   background-color: var(--color-peach);
+  color: var(--color-white);
+}
+
+#welcome-component .image-wrapper p:first-child {
+  padding-top: 50px;
+}
+
+#welcome-component .image-wrapper p:nth-child(2) {
+  padding-bottom: 60px;
 }
 
 #welcome-component .image-wrapper img {
   margin-top: 30px;
-  margin-bottom: -5px;
-  width: 140px;
+  margin-bottom: -4px;
+  width: 120px;
+}
+
+h2 {
+  margin: 0;
+  margin-bottom: 0.6rem;
+}
+
+.b,
+h2 {
+  font-weight: 500;
+}
+
+.f3 {
+  font-size: 18px;
 }
 
 body {
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 #enter-code-component {
