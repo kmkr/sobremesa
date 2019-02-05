@@ -45,22 +45,22 @@ class EnterCodeComponent extends Component {
             <button class="bl0" type="submit">
               Zing
             </button>
-            {!!missingUser && (
-              <p class="error">
-                {missingUser.split(/[\s-]/).length > 1 ? (
-                  <span>
-                    Uhm, fant ikke noe med kombinasjonen '{missingUser}', sikker
-                    på at du skrev riktig?
-                  </span>
-                ) : (
-                  <span>
-                    Koden er en kombinasjon av ett ord og ett dyr. Du skrev '
-                    {missingUser}'.
-                  </span>
-                )}
-              </p>
-            )}
           </form>
+          {!!missingUser && (
+            <p class="error mt3 pa3">
+              {missingUser.split(/[\s-]/).length > 1 ? (
+                <span>
+                  Uhm, fant ikke noe med kombinasjonen '{missingUser}', sikker
+                  på at du skrev riktig?
+                </span>
+              ) : (
+                <span>
+                  Koden er en kombinasjon av et tildelt ord og ditt spirit
+                  animal. Du skrev '{missingUser}'.
+                </span>
+              )}
+            </p>
+          )}
         </div>
       </div>
     );
