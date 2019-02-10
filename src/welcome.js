@@ -1,7 +1,43 @@
 import { h, Component } from "preact";
+import { throttle } from "throttle-debounce";
 import EnterEmailComponent from "./enter-email-component";
 
+function onScroll() {
+  const arrowDown = document.querySelector(".arrow-down");
+  const imageWrapper = document.querySelector(".image-wrapper");
+
+  const currentPos = window.scrollY;
+  const threshold = Math.min(
+    window.innerHeight,
+    imageWrapper.offsetTop + imageWrapper.offsetHeight
+  );
+
+  const showBefore = threshold / 3.5;
+
+  const arrowHeight = 30;
+
+  if (currentPos < showBefore) {
+    arrowDown.style.opacity = "1";
+    arrowDown.style.top = `${threshold - arrowHeight * 2 - 20}px`;
+    arrowDown.style.left = "20px";
+  } else {
+    arrowDown.style.opacity = "0";
+  }
+}
+
 class WelcomeComponent extends Component {
+  componentDidMount() {
+    this.throttled = throttle(300, onScroll);
+    window.addEventListener("scroll", this.throttled);
+  }
+
+  componentWllUnmount() {
+    if (this.throttled) {
+      this.throttled.cancel();
+      window.removeEventListener("scroll", this.throttled);
+    }
+  }
+
   render({ assets, children, user }) {
     return (
       <div id="welcome-component" class="tc">
@@ -10,6 +46,7 @@ class WelcomeComponent extends Component {
           <p>ca dd.mm.åååå</p>
           <img src={assets.iceCream} alt="Wedding on top" />
           <img
+            onLoad={onScroll}
             class="arrow-down"
             src={assets.arrowDown}
             alt="Arrow pointing down"

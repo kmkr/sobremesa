@@ -122,16 +122,11 @@ p {
 }
 
 #welcome-component .image-wrapper .arrow-down {
+  opacity: 0;
+  transition: opacity 0.3s;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
   width: 30px;
-}
-
-@media (min-width: 1024px) {
-  #welcome-component .image-wrapper .arrow-down {
-    display: none;
-  }
+  height: 30px;
 }
 
 #welcome-component .image-wrapper p:first-child {
