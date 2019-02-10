@@ -9,6 +9,11 @@ class WelcomeComponent extends Component {
           <p>Mye kos. Litt bryllup.</p>
           <p>ca dd.mm.åååå</p>
           <img src={assets.iceCream} alt="Wedding on top" />
+          <img
+            class="arrow-down"
+            src={assets.arrowDown}
+            alt="Arrow pointing down"
+          />
         </div>
 
         <div class="block">

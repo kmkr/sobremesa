@@ -114,6 +114,19 @@ p {
   color: var(--color-white);
 }
 
+#welcome-component .image-wrapper .arrow-down {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 30px;
+}
+
+@media (min-width: 1024px) {
+  #welcome-component .image-wrapper .arrow-down {
+    display: none;
+  }
+}
+
 #welcome-component .image-wrapper p:first-child {
   padding-top: 50px;
 }
