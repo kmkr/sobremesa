@@ -12,9 +12,8 @@ block content
       if user
         script(type='text/javascript').
           window.sobr.user = {
-            name: '#{user.name}',
-            inviter: '#{user.inviter}',
-            welcomeTitle: '#{user.welcomeTitle}',
-            welcomeMsg: '#{user.welcomeMsg}'
+            name: "#{user.name}",
+            welcomeTitle: "#{user.welcomeTitle}",
+            welcomeMsg: "#{user.welcomeMsg}"
           };
     script(type='text/javascript' src=js async charset='utf-8')
