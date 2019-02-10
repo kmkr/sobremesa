@@ -92,13 +92,19 @@ button:hover {
   background-color: var(--color-blue);
 }
 
-@media (max-width: 404px) {
+@media (max-width: 374px) {
   form button {
     margin-top: 10px;
   }
 }
 
-@media (min-width: 405px) {
+@media (min-width: 375px) and (max-width: 399px) {
+  form input {
+    width: 170px;
+  }
+}
+
+@media (min-width: 400px) {
   form {
     display: flex;
   }
