@@ -42,9 +42,7 @@ class EnterCodeComponent extends Component {
               onInput={this.updateCode}
               placeholder="akrobatisk-sommerfugl"
             />
-            <button class="bl0" type="submit">
-              Zing
-            </button>
+            <button type="submit">Zing</button>
           </form>
           {!!missingUser && (
             <p class="error mt3 pa3">

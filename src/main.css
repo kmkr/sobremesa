@@ -39,10 +39,6 @@
   padding-bottom: 60px;
 }
 
-.bl0 {
-  border-left: 0;
-}
-
 .tc {
   text-align: center;
 }
@@ -96,12 +92,23 @@ button:hover {
   background-color: var(--color-blue);
 }
 
-form {
-  display: flex;
+@media (max-width: 404px) {
+  form button {
+    margin-top: 10px;
+  }
 }
 
-form input {
-  flex-grow: 1;
+@media (min-width: 405px) {
+  form {
+    display: flex;
+  }
+  form input {
+    flex-grow: 1;
+  }
+
+  form button {
+    border-left: 0;
+  }
 }
 
 p {

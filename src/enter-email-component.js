@@ -73,7 +73,7 @@ class EnterEmailComponent extends Component {
             value={email}
             onInput={this.updateEmail}
           />
-          <button class="bl0" type="submit" disabled={loading}>
+          <button type="submit" disabled={loading}>
             Zing
           </button>
         </form>
