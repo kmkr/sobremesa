@@ -54,7 +54,6 @@ input[type="text"] {
   border-radius: 0;
   transition: 0.2s ease;
   transition-property: background-color, border-color, color;
-  text-transform: lowercase;
 }
 
 input:required {
