@@ -7,18 +7,17 @@ function onScroll() {
   const imageWrapper = document.querySelector(".image-wrapper");
 
   const currentPos = window.scrollY;
-  const threshold = Math.min(
+  const bottomPlacement = Math.min(
     window.innerHeight,
     imageWrapper.offsetTop + imageWrapper.offsetHeight
   );
 
-  const showBefore = threshold / 3.5;
+  const showArrow = currentPos + window.innerHeight < bottomPlacement + 100;
 
-  const arrowHeight = 30;
-
-  if (currentPos < showBefore) {
+  if (showArrow) {
+    const arrowHeight = 30;
     arrowDown.style.opacity = "1";
-    arrowDown.style.top = `${threshold - arrowHeight * 2 - 20}px`;
+    arrowDown.style.top = `${bottomPlacement - arrowHeight * 2 - 20}px`;
     arrowDown.style.left = "20px";
   } else {
     arrowDown.style.opacity = "0";
