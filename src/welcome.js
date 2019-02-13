@@ -15,7 +15,7 @@ function onScroll() {
   const showArrow = currentPos + window.innerHeight < bottomPlacement + 100;
 
   if (showArrow) {
-    const arrowHeight = 30;
+    const arrowHeight = 40;
     arrowDown.style.opacity = "1";
     arrowDown.style.top = `${bottomPlacement - arrowHeight * 2 - 20}px`;
     arrowDown.style.left = "20px";
@@ -25,6 +25,10 @@ function onScroll() {
 }
 
 class WelcomeComponent extends Component {
+  constructor() {
+    super();
+    this.scrollToWelcomeContent = this.scrollToWelcomeContent.bind(this);
+  }
   componentDidMount() {
     this.throttled = throttle(300, onScroll);
     window.addEventListener("scroll", this.throttled);
@@ -37,6 +41,12 @@ class WelcomeComponent extends Component {
     }
   }
 
+  scrollToWelcomeContent() {
+    if (this.welcomeTitleElem) {
+      this.welcomeTitleElem.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   render({ assets, children, user }) {
     return (
       <div id="welcome-component" class="tc">
@@ -46,13 +56,17 @@ class WelcomeComponent extends Component {
           <img src={assets.iceCream} alt="Wedding on top" />
           <img
             onLoad={onScroll}
+            onClick={this.scrollToWelcomeContent}
             class="arrow-down"
             src={assets.arrowDown}
             alt="Arrow pointing down"
           />
         </div>
 
-        <div class="block">
+        <div
+          class="block"
+          ref={welcomeTitleElem => (this.welcomeTitleElem = welcomeTitleElem)}
+        >
           <div class="pv4">
             <h2>{user.welcomeTitle}</h2>
             <p>{user.welcomeMsg}</p>
