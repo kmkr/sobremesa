@@ -18,11 +18,7 @@ class WelcomeComponent extends Component {
     const showArrow =
       currentPos + window.innerHeight < this.welcomeTitleElem.offsetTop + 70;
 
-    if (showArrow) {
-      this.arrowDownElem.style.opacity = "1";
-    } else {
-      this.arrowDownElem.style.opacity = "0";
-    }
+    this.arrowDownElem.style.opacity = showArrow ? "1" : "0";
   }
 
   componentWllUnmount() {
