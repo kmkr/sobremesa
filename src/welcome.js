@@ -52,7 +52,7 @@ class WelcomeComponent extends Component {
       <div id="welcome-component" class="tc">
         <div class="image-wrapper fw400 f3">
           <p>Mye kos. Litt bryllup.</p>
-          <p>ca dd.mm.åååå</p>
+          <p>ca 19. juni 2020</p>
           <img src={assets.iceCream} alt="Wedding on top" />
           <img
             onLoad={onScroll}
