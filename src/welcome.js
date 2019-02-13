@@ -1,37 +1,28 @@
 import { h, Component } from "preact";
 import { throttle } from "throttle-debounce";
-import EnterEmailComponent from "./enter-email-component";
-
-function onScroll() {
-  const arrowDown = document.querySelector(".arrow-down");
-  const imageWrapper = document.querySelector(".image-wrapper");
-
-  const currentPos = window.scrollY;
-  const bottomPlacement = Math.min(
-    window.innerHeight,
-    imageWrapper.offsetTop + imageWrapper.offsetHeight
-  );
-
-  const showArrow = currentPos + window.innerHeight < bottomPlacement + 100;
-
-  if (showArrow) {
-    const arrowHeight = 40;
-    arrowDown.style.opacity = "1";
-    arrowDown.style.top = `${bottomPlacement - arrowHeight * 2 - 20}px`;
-    arrowDown.style.left = "20px";
-  } else {
-    arrowDown.style.opacity = "0";
-  }
-}
 
 class WelcomeComponent extends Component {
   constructor() {
     super();
     this.scrollToWelcomeContent = this.scrollToWelcomeContent.bind(this);
+    this.onScroll = this.onScroll.bind(this);
   }
+
   componentDidMount() {
-    this.throttled = throttle(300, onScroll);
+    this.throttled = throttle(100, this.onScroll);
     window.addEventListener("scroll", this.throttled);
+  }
+
+  onScroll() {
+    const currentPos = window.scrollY;
+    const showArrow =
+      currentPos + window.innerHeight < this.welcomeTitleElem.offsetTop + 70;
+
+    if (showArrow) {
+      this.arrowDownElem.style.opacity = "1";
+    } else {
+      this.arrowDownElem.style.opacity = "0";
+    }
   }
 
   componentWllUnmount() {
@@ -55,7 +46,8 @@ class WelcomeComponent extends Component {
           <p>ca 19. juni 2020</p>
           <img src={assets.iceCream} alt="Wedding on top" />
           <img
-            onLoad={onScroll}
+            ref={arrowDownElem => (this.arrowDownElem = arrowDownElem)}
+            onLoad={this.onScroll}
             onClick={this.scrollToWelcomeContent}
             class="arrow-down"
             src={assets.arrowDown}

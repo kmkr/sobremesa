@@ -130,9 +130,12 @@ p {
 #welcome-component .image-wrapper .arrow-down {
   opacity: 0;
   transition: opacity 0.3s;
-  position: absolute;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 
 #welcome-component .image-wrapper p:first-child {
