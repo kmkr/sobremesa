@@ -3,9 +3,7 @@ extends layout.pug
 block content
     div(id='app')
       script(type='text/javascript').
-        window.sobr = {
-          assets: !{assets}
-        }
+        window.sobr = {}
       if missingUser
         script(type='text/javascript').
             window.sobr.missingUser = '#{missingUser}';

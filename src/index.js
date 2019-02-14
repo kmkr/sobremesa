@@ -7,6 +7,6 @@ import App from "./app";
 const { sobr } = window;
 
 render(
-  <App assets={sobr.assets} user={sobr.user} missingUser={sobr.missingUser} />,
+  <App user={sobr.user} missingUser={sobr.missingUser} />,
   document.getElementById("app")
 );

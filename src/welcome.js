@@ -34,19 +34,22 @@ class WelcomeComponent extends Component {
     }
   }
 
-  render({ assets, children, user }) {
+  render({ children, user }) {
     return (
       <div id="welcome-component" class="tc">
         <div class="image-wrapper fw400 f3">
           <p>Mye kos. Litt bryllup.</p>
           <p>ca 19. juni 2020</p>
-          <img src={assets.iceCream} alt="Wedding on top" />
+          <img
+            src="https://s3.eu-north-1.amazonaws.com/sobremesa.xyz/images/icecream-264.png"
+            alt="Wedding on top"
+          />
           <img
             ref={arrowDownElem => (this.arrowDownElem = arrowDownElem)}
             onLoad={this.onScroll}
             onClick={this.scrollToWelcomeContent}
             class="arrow-down"
-            src={assets.arrowDown}
+            src="https://s3.eu-north-1.amazonaws.com/sobremesa.xyz/images/arrow-down.png"
             alt="Arrow pointing down"
           />
         </div>
